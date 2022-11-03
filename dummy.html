@@ -47,7 +47,12 @@
                 for (let item of data) {
                     console.log(item)
                     let div = document.createElement('div');
-                    div.innerHTML = renderMapWithRoute(item.id, item.name).trim();
+
+                    let nameNode = document.createElement('h2');
+                    nameNode.innerText = item.name;
+                    div.appendChild(nameNode)
+
+                    div.innerHTML += renderMapWithRoute(item.id, item.name).trim();
                     document.body.appendChild(div)
                 }
 
