@@ -26,12 +26,31 @@
 <body>
 
     <script>
-        fetch('trasy.json')
+        function renderMapWithRoute(id, name) {
+            return `<div style="max-width:600px;overflow:hidden;margin:0 auto;min-width:300px;"><iframe
+            src="https://mapa-turystyczna.pl/map/widget/route/h1l0p1/${id
+                }.html" height="680" frameborder="0"
+                style = "width:100%;border:0;" ></iframe > <a
+                    href="https://mapa-turystyczna.pl/route/${id
+                }?utm_source=external_web&amp;utm_medium=widget&amp;utm_campaign=route_widget"
+                    target="_blank"
+                    style="color:#999;padding:7px 0;font-size: 13px;font-family:Roboto,Arial,sans-serif;display: inline-block;">Trasa:
+                    ${name} | mapa-turystyczna.pl</a></div >`;
+        }
+
+        fetch('https://raw.githubusercontent.com/radluki/travel/main/trasy.json')
             .then(function (response) {
                 return response.json();
             })
             .then(function (data) {
-                appendData(data);
+                console.log(data);
+                for (let item of data) {
+                    console.log(item)
+                    let div = document.createElement('div');
+                    div.innerHTML = renderMapWithRoute(item.id, item.name).trim();
+                    document.body.appendChild(div)
+                }
+
             })
             .catch(function (err) {
                 console.log(err);
