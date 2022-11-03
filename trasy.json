@@ -27,6 +27,10 @@
         {
             "name": "Jahňací štít",
             "id": "31tnc"
+        },
+        {
+            "name": "Szpiglasowy Wierch i Wrota Chałbińskiego",
+            "id": "4l68"
         }
     ],
     "zachodnie": [
@@ -37,6 +41,10 @@
         {
             "name": "Czerwone Wierchy",
             "id": "3ryit"
+        },
+        {
+            "name": "Bystrá i Starobociański Wierch",
+            "id": "3rwnc"
         }
     ]
 }
