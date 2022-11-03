@@ -1,10 +1,30 @@
 [
     {
         "name": "Bystrá lávka",
+        "id": "3ryuy"
+    },
+    {
+        "name": "Kriváň",
         "id": "3171i"
     },
     {
         "name": "Kôprovský štít",
         "id": "3ryuu"
+    },
+    {
+        "name": "Slavkovský štít",
+        "id": "3n0js"
+    },
+    {
+        "name": "Východná Vysoká",
+        "id": "3ryu8"
+    },
+    {
+        "name": "Priečne sedlo (Czerwona Ławka)",
+        "id": "33x7i"
+    },
+    {
+        "name": "Jahňací štít",
+        "id": "31tnc"
     }
 ]
