@@ -50,12 +50,20 @@
                     <ul class="collapse list-unstyled" id="wysokieSubmenu">
                     </ul>
                 </li>
+                <li class="active">
+                    <a href="#zachodnieSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Tatry
+                        Zachodnie</a>
+                    <ul class="collapse list-unstyled" id="zachodnieSubmenu">
+                    </ul>
+                </li>
             </ul>
         </nav>
 
         <!-- Page Content -->
         <div id="content">
             <!-- We'll fill this with dummy content -->
+            <div id="content-wysokie"></div>
+            <div id="content-zachodnie"></div>
         </div>
 
     </div>
@@ -91,14 +99,24 @@
             })
             .then(function (data) {
                 console.log(data);
-                for (let item of data) {
+                for (let item of data.wysokie) {
                     console.log(item)
                     let element = renderListElement(item.id, item.name)
-                    document.getElementById("content").append(element)
+                    document.getElementById("content-wysokie").append(element)
 
                     let menuItem = document.createElement("li");
                     menuItem.innerHTML = `<a href="#x${item.id}">${item.name}</a>`;
                     document.getElementById("wysokieSubmenu").append(menuItem)
+                }
+
+                for (let item of data.zachodnie) {
+                    console.log(item)
+                    let element = renderListElement(item.id, item.name)
+                    document.getElementById("content-zachodnie").append(element)
+
+                    let menuItem = document.createElement("li");
+                    menuItem.innerHTML = `<a href="#x${item.id}">${item.name}</a>`;
+                    document.getElementById("zachodnieSubmenu").append(menuItem)
                 }
 
             })
