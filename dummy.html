@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: powderblue;
+        }
+
+        h2 {
+            color: blue;
+            text-align: center
+        }
+
+        h1 {
+            color: blue;
+            text-align: center
+        }
+
+        p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        fetch('trasy.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    </script>
+</body>
